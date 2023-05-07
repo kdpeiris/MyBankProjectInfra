@@ -9,6 +9,10 @@ Provisioned resources via IaC:
 - azurerm_mysql_flexible_database
 - azurerm_mysql_flexible_server_firewall_rule
 
+Architecture Diagram:
+
+![alt text](https://github.com/kdpeiris/MyBankProjectInfra/blob/main/Azure%20Architecture.png)
+
 After configuring the infrastructure, you need to perform additional configurations to run the PHP web app on Azure App Service.
 
 Task 01: Configure Deployment Settings
