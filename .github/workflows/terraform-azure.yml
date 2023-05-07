@@ -3,7 +3,7 @@ name: 'Terraform-Azure'
 
 # Controls when the workflow will run
 on:
-  #Triggers the workflow on push request events but only for the "main" branch
+  # Triggers the workflow on push request events but only for the "main" branch
   push:
     branches: [ "main" ]
 env: 
