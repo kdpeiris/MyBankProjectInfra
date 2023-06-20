@@ -48,3 +48,18 @@ Task 04: Connect to the database via the Azure CLI & create customers table.
 CREATE TABLE mybankprojectdb.customers ( id INT NOT NULL AUTO_INCREMENT, given_name VARCHAR(100) NOT NULL, surname VARCHAR(100) NOT NULL, dob DATE NOT NULL, nic VARCHAR(11) NOT NULL, gender VARCHAR(45) NOT NULL, email VARCHAR(100) NOT NULL, phone_no VARCHAR(11) NOT NULL, account_type VARCHAR(45) NOT NULL, PRIMARY KEY (id));
 
 ***Now Azure webapp (mybankprojectappsvc.azurewebsites.net) is ready!
+
+Challenges:
+
+# Create resource group
+az group create --name backendRG --location northeurope
+
+# Create storage account
+az storage account create  --resource-group backendRG --name tfstatedilshan --sku Standard_LRS --encryption-services blob
+
+# Create blob container
+az storage container create --name backendcontainer --account-name tfstatedilshan
+
+# Get the storage access key and store it as an environment variable
+$ACCOUNT_KEY=$(az storage account keys list --resource-group backendRG --account-name tfstatedilshan --query '[0].value' -o tsv) 
+$env:ARM_ACCESS_KEY=$ACCOUNT_KEY
